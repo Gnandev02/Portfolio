@@ -17,11 +17,11 @@ export default function GithubStats() {
   const isDark = resolvedTheme === "dark"
   
   // Custom theme colors for github-readme-stats
-  const bg_color = isDark ? "0F172A" : "FFFFFF"
-  const title_color = isDark ? "2563EB" : "2563EB"
-  const text_color = isDark ? "94A3B8" : "475569"
-  const icon_color = "06B6D4"
-  const border_color = isDark ? "1E293B" : "E2E8F0"
+  const bg_color = "09090B"
+  const title_color = "FAFAFA"
+  const text_color = "A1A1AA"
+  const icon_color = "0070F3"
+  const border_color = "27272A"
 
   const username = "Gnandev12"
 
@@ -51,7 +51,7 @@ export default function GithubStats() {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="glass-card p-4 flex justify-center items-center overflow-hidden"
+              className="border border-border/50 bg-card/50 rounded-2xl p-4 flex justify-center items-center overflow-hidden"
             >
               <img
                 src={`https://github-readme-stats.vercel.app/api?username=${username}&show_icons=true&hide_border=true&title_color=${title_color}&icon_color=${icon_color}&text_color=${text_color}&bg_color=${bg_color}`}
@@ -64,7 +64,7 @@ export default function GithubStats() {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="glass-card p-4 flex justify-center items-center overflow-hidden"
+              className="border border-border/50 bg-card/50 rounded-2xl p-4 flex justify-center items-center overflow-hidden"
             >
               <img
                 src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${username}&layout=compact&hide_border=true&title_color=${title_color}&text_color=${text_color}&bg_color=${bg_color}`}
@@ -78,7 +78,7 @@ export default function GithubStats() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="glass-card p-4 overflow-x-auto flex justify-center"
+            className="border border-border/50 bg-card/50 rounded-2xl p-4 overflow-x-auto flex justify-center"
           >
             <img
               src={`https://github-readme-streak-stats.herokuapp.com/?user=${username}&hide_border=true&title_color=${title_color}&text_color=${text_color}&icon_color=${icon_color}&background=${bg_color}`}

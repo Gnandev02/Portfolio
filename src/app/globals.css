@@ -3,54 +3,55 @@
 @plugin "tailwindcss-animate";
 
 :root {
-  --background: #0F172A;
-  --foreground: #F8FAFC;
+  /* Default to dark mode colors immediately to prevent flash since we only want dark */
+  --background: #09090B;
+  --foreground: #FAFAFA;
   
-  --primary: #2563EB;
+  --primary: #0070F3;
   --primary-foreground: #FFFFFF;
   
-  --secondary: #7C3AED;
-  --secondary-foreground: #FFFFFF;
+  --secondary: #27272A;
+  --secondary-foreground: #FAFAFA;
   
-  --accent: #06B6D4;
+  --accent: #5E6AD2;
   --accent-foreground: #FFFFFF;
   
-  --muted: #1E293B;
-  --muted-foreground: #94A3B8;
+  --muted: #27272A;
+  --muted-foreground: #A1A1AA;
 
-  --border: #1E293B;
-  --card: rgba(30, 41, 59, 0.7);
-  --card-foreground: #F8FAFC;
+  --border: #27272A;
+  --card: #18181B;
+  --card-foreground: #FAFAFA;
   
-  --popover: #0F172A;
-  --popover-foreground: #F8FAFC;
+  --popover: #09090B;
+  --popover-foreground: #FAFAFA;
 
-  --radius: 0.75rem;
+  --radius: 0.5rem;
 }
 
-/* Light mode support if they toggle */
-.light {
-  --background: #FFFFFF;
-  --foreground: #0F172A;
+/* Force dark mode */
+.light, .dark {
+  --background: #09090B;
+  --foreground: #FAFAFA;
   
-  --primary: #2563EB;
+  --primary: #0070F3;
   --primary-foreground: #FFFFFF;
   
-  --secondary: #7C3AED;
-  --secondary-foreground: #FFFFFF;
+  --secondary: #27272A;
+  --secondary-foreground: #FAFAFA;
   
-  --accent: #06B6D4;
+  --accent: #5E6AD2;
   --accent-foreground: #FFFFFF;
   
-  --muted: #F1F5F9;
-  --muted-foreground: #475569;
+  --muted: #27272A;
+  --muted-foreground: #A1A1AA;
 
-  --border: #E2E8F0;
-  --card: rgba(255, 255, 255, 0.7);
-  --card-foreground: #0F172A;
+  --border: #27272A;
+  --card: #18181B;
+  --card-foreground: #FAFAFA;
   
-  --popover: #FFFFFF;
-  --popover-foreground: #0F172A;
+  --popover: #09090B;
+  --popover-foreground: #FAFAFA;
 }
 
 @theme inline {
@@ -75,66 +76,23 @@
   
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
-  --animate-blob: blob 7s infinite;
-  
-  @keyframes blob {
-    0% { transform: translate(0px, 0px) scale(1); }
-    33% { transform: translate(30px, -50px) scale(1.1); }
-    66% { transform: translate(-20px, 20px) scale(0.9); }
-    100% { transform: translate(0px, 0px) scale(1); }
-  }
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), sans-serif;
+  letter-spacing: -0.01em;
 }
 
-.glass {
-  background: var(--card);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+/* Base Headings */
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.03em;
 }
 
-.glass-card {
-  @apply relative overflow-hidden rounded-2xl transition-all duration-300;
-  background: var(--card);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.glass-card::before {
-  content: "";
-  @apply absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 transition-opacity duration-300;
-}
-
-.glass-card:hover::before {
-  @apply opacity-100;
-}
-
-.glass-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-  border-color: rgba(255, 255, 255, 0.2);
-}
-
-.text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent;
-}
-
-.bg-gradient-animate {
-  background: linear-gradient(-45deg, #2563EB, #7C3AED, #06B6D4, #0F172A);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
-}
-
-@keyframes gradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+::selection {
+  background-color: var(--primary);
+  color: white;
 }
 
 /* Custom Scrollbar */
@@ -147,10 +105,10 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--muted);
+  background: var(--border);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--primary);
+  background: var(--muted-foreground);
 }

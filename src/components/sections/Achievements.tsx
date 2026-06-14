@@ -1,48 +1,63 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Award } from "lucide-react"
+import { Trophy, Code, Medal } from "lucide-react"
+
+const achievements = [
+  {
+    title: "LeetCode Proficiency",
+    description: "Solved 120+ coding challenges focusing on advanced data structures and algorithms.",
+    icon: Code,
+  },
+  {
+    title: "CodeChef Rating",
+    description: "Achieved a max rating of 1150+ in competitive programming contests.",
+    icon: Trophy,
+  },
+  {
+    title: "Hackathon Finalist",
+    description: "Top 10 finalist in the national level AI/ML hackathon organized by Techfest.",
+    icon: Medal,
+  },
+]
 
 export default function Achievements() {
   return (
-    <section id="achievements" className="py-20 relative">
+    <section id="achievements" className="py-24 relative border-t border-border/40">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-16">
+        <div className="mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold tracking-tight mb-4"
+            className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-foreground"
           >
-            <span className="text-gradient">Achievements</span>
+            Achievements
           </motion.h2>
-          <motion.div
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            viewport={{ once: true }}
-            className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"
-          />
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="max-w-md mx-auto"
-        >
-          <div className="glass-card p-8 flex flex-col items-center text-center group cursor-default">
-            <div className="relative mb-6">
-              <div className="absolute inset-0 bg-primary/20 blur-xl rounded-full" />
-              <Award className="w-16 h-16 text-primary relative z-10 group-hover:scale-110 transition-transform duration-300" />
-            </div>
-            <h3 className="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">
-              Full Stack Web Development Certification
-            </h3>
-            <p className="text-muted-foreground">
-              Successfully completed comprehensive training in modern full stack web development technologies and practices.
-            </p>
-          </div>
-        </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {achievements.map((achievement, index) => (
+            <motion.div
+              key={achievement.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="p-6 rounded-2xl border border-border bg-card transition-colors hover:border-primary/50 group"
+            >
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform">
+                <achievement.icon className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl font-bold text-foreground mb-3">
+                {achievement.title}
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                {achievement.description}
+              </p>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   )
