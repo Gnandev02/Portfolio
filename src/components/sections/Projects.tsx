@@ -1,7 +1,8 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ExternalLink, Github } from "lucide-react"
+import { ExternalLink } from "lucide-react"
+import { FaGithub } from "react-icons/fa"
 import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
@@ -108,7 +109,7 @@ export default function Projects() {
                   </Button>
                   <Button variant="outline" size="sm" className="rounded-full flex-1 gap-2" asChild>
                     <Link href={project.github} target="_blank">
-                      <Github className="w-4 h-4" /> Source
+                      <FaGithub className="w-4 h-4" /> Source
                     </Link>
                   </Button>
                 </div>

@@ -1,5 +1,6 @@
 import Link from "next/link"
-import { Github, Linkedin, Mail } from "lucide-react"
+import { Mail } from "lucide-react"
+import { FaGithub, FaLinkedin } from "react-icons/fa"
 
 export default function Footer() {
   return (
@@ -22,7 +23,7 @@ export default function Footer() {
               rel="noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
             >
-              <Github className="h-5 w-5" />
+              <FaGithub className="h-5 w-5" />
               <span className="sr-only">GitHub</span>
             </Link>
             <Link
@@ -31,7 +32,7 @@ export default function Footer() {
               rel="noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
             >
-              <Linkedin className="h-5 w-5" />
+              <FaLinkedin className="h-5 w-5" />
               <span className="sr-only">LinkedIn</span>
             </Link>
             <Link

@@ -99,7 +99,11 @@ body {
 }
 
 .glass-card {
-  @apply relative overflow-hidden rounded-2xl glass transition-all duration-300;
+  @apply relative overflow-hidden rounded-2xl transition-all duration-300;
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .glass-card::before {

@@ -54,7 +54,7 @@ export default function GithubStats() {
               className="glass-card p-4 flex justify-center items-center overflow-hidden"
             >
               <img
-                src={\`https://github-readme-stats.vercel.app/api?username=\${username}&show_icons=true&hide_border=true&title_color=\${title_color}&icon_color=\${icon_color}&text_color=\${text_color}&bg_color=\${bg_color}\`}
+                src={`https://github-readme-stats.vercel.app/api?username=${username}&show_icons=true&hide_border=true&title_color=${title_color}&icon_color=${icon_color}&text_color=${text_color}&bg_color=${bg_color}`}
                 alt="GitHub Stats"
                 className="w-full h-auto max-w-[400px]"
               />
@@ -67,7 +67,7 @@ export default function GithubStats() {
               className="glass-card p-4 flex justify-center items-center overflow-hidden"
             >
               <img
-                src={\`https://github-readme-stats.vercel.app/api/top-langs/?username=\${username}&layout=compact&hide_border=true&title_color=\${title_color}&text_color=\${text_color}&bg_color=\${bg_color}\`}
+                src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${username}&layout=compact&hide_border=true&title_color=${title_color}&text_color=${text_color}&bg_color=${bg_color}`}
                 alt="Top Languages"
                 className="w-full h-auto max-w-[400px]"
               />
@@ -81,7 +81,7 @@ export default function GithubStats() {
             className="glass-card p-4 overflow-x-auto flex justify-center"
           >
             <img
-              src={\`https://github-readme-streak-stats.herokuapp.com/?user=\${username}&hide_border=true&title_color=\${title_color}&text_color=\${text_color}&icon_color=\${icon_color}&background=\${bg_color}\`}
+              src={`https://github-readme-streak-stats.herokuapp.com/?user=${username}&hide_border=true&title_color=${title_color}&text_color=${text_color}&icon_color=${icon_color}&background=${bg_color}`}
               alt="GitHub Streak"
               className="w-full h-auto max-w-[800px] min-w-[400px]"
             />

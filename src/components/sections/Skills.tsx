@@ -90,7 +90,7 @@ export default function Skills() {
                     <div className="h-2 w-full bg-secondary/20 rounded-full overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
-                        whileInView={{ width: \`\${skill.progress}%\` }}
+                        whileInView={{ width: `${skill.progress}%` }}
                         viewport={{ once: true }}
                         transition={{ duration: 1, delay: 0.2 + i * 0.1, ease: "easeOut" }}
                         className="h-full bg-gradient-to-r from-primary to-accent rounded-full"
