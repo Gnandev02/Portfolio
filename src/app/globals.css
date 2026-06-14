@@ -3,55 +3,53 @@
 @plugin "tailwindcss-animate";
 
 :root {
-  /* Default to dark mode colors immediately to prevent flash since we only want dark */
-  --background: #09090B;
-  --foreground: #FAFAFA;
+  --background: #0A0A0A;
+  --foreground: #FFFFFF;
   
-  --primary: #0070F3;
+  --primary: #3B82F6;
   --primary-foreground: #FFFFFF;
   
-  --secondary: #27272A;
-  --secondary-foreground: #FAFAFA;
+  --secondary: #161616;
+  --secondary-foreground: #A1A1AA;
   
-  --accent: #5E6AD2;
+  --accent: #3B82F6;
   --accent-foreground: #FFFFFF;
   
-  --muted: #27272A;
+  --muted: #161616;
   --muted-foreground: #A1A1AA;
 
-  --border: #27272A;
-  --card: #18181B;
-  --card-foreground: #FAFAFA;
+  --border: rgba(255, 255, 255, 0.08);
+  --card: #111111;
+  --card-foreground: #FFFFFF;
   
-  --popover: #09090B;
-  --popover-foreground: #FAFAFA;
+  --popover: #0A0A0A;
+  --popover-foreground: #FFFFFF;
 
   --radius: 0.5rem;
 }
 
-/* Force dark mode */
 .light, .dark {
-  --background: #09090B;
-  --foreground: #FAFAFA;
+  --background: #0A0A0A;
+  --foreground: #FFFFFF;
   
-  --primary: #0070F3;
+  --primary: #3B82F6;
   --primary-foreground: #FFFFFF;
   
-  --secondary: #27272A;
-  --secondary-foreground: #FAFAFA;
+  --secondary: #161616;
+  --secondary-foreground: #A1A1AA;
   
-  --accent: #5E6AD2;
+  --accent: #3B82F6;
   --accent-foreground: #FFFFFF;
   
-  --muted: #27272A;
+  --muted: #161616;
   --muted-foreground: #A1A1AA;
 
-  --border: #27272A;
-  --card: #18181B;
-  --card-foreground: #FAFAFA;
+  --border: rgba(255, 255, 255, 0.08);
+  --card: #111111;
+  --card-foreground: #FFFFFF;
   
-  --popover: #09090B;
-  --popover-foreground: #FAFAFA;
+  --popover: #0A0A0A;
+  --popover-foreground: #FFFFFF;
 }
 
 @theme inline {
@@ -76,22 +74,35 @@
   
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-marquee: marquee 30s linear infinite;
+  
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
 }
 
 body {
   background-color: var(--background);
+  background-image: radial-gradient(circle at top, rgba(59,130,246,0.08), transparent 40%);
   color: var(--foreground);
   font-family: var(--font-sans), sans-serif;
   letter-spacing: -0.01em;
+  line-height: 1.6;
 }
 
-/* Base Headings */
-h1, h2, h3, h4, h5, h6 {
+h1 {
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+h2, h3, h4, h5, h6 {
   letter-spacing: -0.03em;
+  line-height: 1.2;
 }
 
 ::selection {
-  background-color: var(--primary);
+  background-color: rgba(59,130,246,0.3);
   color: white;
 }
 
@@ -105,10 +116,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--border);
+  background: var(--secondary);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--muted-foreground);
+  background: var(--primary);
 }
